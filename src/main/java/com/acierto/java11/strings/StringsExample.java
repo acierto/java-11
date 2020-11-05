@@ -8,6 +8,5 @@ public class StringsExample {
 
         String str1 = "string";
         System.out.println(str1.repeat(3));
-//
     }
 }
