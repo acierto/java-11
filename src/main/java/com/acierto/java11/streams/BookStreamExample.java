@@ -1,6 +1,7 @@
 package com.acierto.java11.streams;
 
 import java.util.List;
+import java.util.function.*;
 import java.util.stream.Stream;
 
 class Book {
@@ -32,5 +33,10 @@ public class BookStreamExample {
 
         Stream<Book> bkStrm = books.stream();
         System.out.println(bkStrm.map(Book::getPrice).reduce(0.0, Double::sum));
+
+        Stream<Double> doubles = Stream.of(1d, 2d, 3d);
+        BinaryOperator<Double> bo = Double::sum;
+
+        double total = doubles.reduce(0.0, bo);
     }
 }
